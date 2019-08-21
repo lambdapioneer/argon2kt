@@ -8,14 +8,42 @@ It uses JNI to bridge JVM/C and allows relying solely on direct-allocated ByteBu
 Argon2Kt is licensed under the MIT license. See the [LICENSE file](https://github.com/lambdapioneer/argon2kt/blob/master/LICENSE) in the root directory.
 
 
-## Quick start
+## Quick start 👩‍💻 👨‍💻
 
-TODO: How to make build.gradle change
+Add the dependency to your gradle.build file:
 
-TODO: How to use it to generate and verify hashes
+```groovy
+implementation 'com.lambdapioneer.argon2kt:argon2kt:0.1'
+```
+
+Use the `Argon2Kt` class to hash and verify using Argon2:
+
+```kotlin
+// initialize Argon2Kt and load the native library
+val argon2Kt = Argon2Kt()
+
+// hash a password
+val hashResult : Argon2KtResult = argon2Kt.hash(
+  mode = Argon2Mode.ARGON2_I,
+  password = passwordByteArray,
+  salt = saltByteArray,
+  tCostInIterations = 5,
+  mCostInKibibyte = 65536
+)
+
+println("Raw hash: ${hashResult.rawHashAsHexadecimal()}")
+println("Encoded string: ${hashResult.encodedOutputAsString()}")
+
+// verify a password against an encoded string representation
+val verificationResult : Boolean = argon2Kt.verify(
+  mode = Argon2Mode.ARGON2_I,
+  encodedString = hashResult.encodedOutputAsString()
+  password = passwordByteArray,
+)
+```
 
 
-## FAQ
+## FAQ 🤔
 
 **How do I reduce the exposure of secrets in memory?**
 
@@ -33,7 +61,7 @@ Of course. Checkout the [`SampleJavaClass.java`](https://github.com/lambdapionee
 
 By default Argon2Kt uses the system's loader for .so files. However, for some models and configurations it is known to fail. You can use an alternative SoLoader such as [ReLinker](https://github.com/KeepSafe/ReLinker) using the callback provided by the `Argon2Kt` constructor.
 
-## Contribute
+## Contribute 👋
 
 When contributing, please follow the following (common-sense) steps:
 
