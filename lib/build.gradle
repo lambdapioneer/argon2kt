@@ -1,6 +1,11 @@
 apply plugin: "com.android.library"
 apply plugin: "kotlin-android"
 apply plugin: "kotlin-android-extensions"
+apply plugin: "maven"
+
+ext {
+    version_name = '0.1'
+}
 
 android {
     compileSdkVersion project.ext.compileSdkVersion
@@ -10,7 +15,7 @@ android {
         targetSdkVersion project.ext.targetSdkVersion
 
         versionCode 1
-        versionName "0.1"
+        versionName version_name
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
@@ -58,3 +63,29 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
     androidTestImplementation "org.assertj:assertj-core:$jassert_version"
 }
+
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+
+ext {
+    bintrayRepo = 'android_artifacts'
+    bintrayOrg = 'lambdapioneer'
+    bintrayName = 'argon2kt'
+
+    publishedGroupId = 'com.lambdapioneer.argon2kt'
+    libraryName = 'argon2kt'
+    artifact = 'argon2kt'
+
+    libraryDescription = 'An Android/Kotlin binding for the Argon2 hash'
+
+    siteUrl = 'https://github.com/lambdapioneer/argon2kt'
+    gitUrl = 'https://github.com/lambdapioneer/argon2kt.git'
+
+    developerId = 'lambdapioneer'
+
+    licenseName = 'MIT License'
+    licenseUrl = 'https://github.com/lambdapioneer/argon2kt/blob/master/LICENSE'
+    allLicenses = ["MIT-License"]
+}
+
+apply from: file('publish.gradle')
