@@ -73,7 +73,7 @@ When contributing, please follow the following (common-sense) steps:
     - Run `./gradlew connectedAndroidTest` and manually test the APK in release configuration using `./gradlew installDebug`.
 
 
-## Sample app
+## Sample app 📱
 
 The repository comes with a sample app that you can install both in debug and release configuration. Just run `./gradlew installDebug` or `./gradlew installRelease` respectively.
 
