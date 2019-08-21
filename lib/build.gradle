@@ -29,6 +29,8 @@ android {
                 targets 'argon2jni'
             }
         }
+
+        archivesBaseName = "argon2kt"
     }
 
     buildTypes {
