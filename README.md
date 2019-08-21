@@ -49,7 +49,7 @@ val verificationResult : Boolean = argon2Kt.verify(
 
 Internally, Argon2Kt uses direct-allocated ByteBuffers for passing around both secrets (e.g. password, hash), and outputs (e.g. raw hash).
 
-In contrast to ByteArrays and Strings, direct-allocated ByteBuffers are (usually) outside the JVM heap and maintain a fix position. This allows easy passing between native libraries through the JVM world. For our purposes, it allows us to overwrite the content with confidence once we no longer need them. Therefore, using them is preferable.
+In contrast to ByteArrays and Strings, direct-allocated ByteBuffers (usually) reside outside the JVM heap and maintain a fixed position. This allows easy passing between native libraries through the JVM world. For our purposes, it allows us to overwrite the content with confidence once we no longer need them. Therefore, using them is preferable.
 
 Argon2Kt offers convenience methods to use ByteArrays and Strings instead. However, the JVM might move these in memory without overwriting the old location. Therefore, you can no longer make sure that the secrets are removed once they are no longer needed.
 
