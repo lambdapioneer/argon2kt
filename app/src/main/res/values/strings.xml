@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Argon2kt</string>
+
+    <string name="hint_salt">salt</string>
+    <string name="hint_password">password</string>
+
+    <string name="button_run">Run</string>
+
+    <string name="edit_salt_default">0123456789abcdef</string>
+    <string name="edit_memory_default">65536</string>
+    <string name="edit_iterations_default">2</string>
+
+    <string name="label_salt">Salt in hex (e.g. FF42):</string>
+    <string name="label_password">Password in Unicode (e.g. AbcÄöü):</string>
+    <string name="label_argon_mode_and_version">Argon2 version and mode:</string>
+    <string name="label_iteration_count">Iteration count:</string>
+    <string name="label_memory">Memory requirement (in KiB):</string>
+    <string name="label_output_hash">Hash in hexadecimal (click to copy):</string>
+    <string name="label_output_encoded">Encoded Argon2 string (click to copy):</string>
+
+    <string name="toast_copied_to_clipboard">Copied to clipboard ✨</string>
+</resources>
