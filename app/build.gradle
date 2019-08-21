@@ -44,6 +44,8 @@ android {
 
 dependencies {
     implementation project(":lib")
+    // implementation 'com.lambdapioneer.argon2kt:argon2kt:0.1'
+
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation "androidx.appcompat:appcompat:$appcompat_version"
     implementation "androidx.core:core-ktx:$ktx_version"
