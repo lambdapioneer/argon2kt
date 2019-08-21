@@ -61,6 +61,7 @@ Of course. Checkout the [`SampleJavaClass.java`](https://github.com/lambdapionee
 
 By default Argon2Kt uses the system's loader for .so files. However, for some models and configurations it is known to fail. You can use an alternative SoLoader such as [ReLinker](https://github.com/KeepSafe/ReLinker) using the callback provided by the `Argon2Kt` constructor.
 
+
 ## Contribute 👋
 
 When contributing, please follow the following (common-sense) steps:
@@ -70,3 +71,10 @@ When contributing, please follow the following (common-sense) steps:
  - In the pull-request explain the high-level goal and your approach. That provides valuable context.
  - Convince others (and yourself) that the change is safe and sound.
     - Run `./gradlew connectedAndroidTest` and manually test the APK in release configuration using `./gradlew installDebug`.
+
+
+## Sample app
+
+The repository comes with a sample app that you can install both in debug and release configuration. Just run `./gradlew installDebug` or `./gradlew installRelease` respectively.
+
+<img src="app/device_screenshot.png" height=640 align=center>
