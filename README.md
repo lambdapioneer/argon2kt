@@ -77,4 +77,4 @@ When contributing, please follow the following (common-sense) steps:
 
 The repository comes with a sample app that you can install both in debug and release configuration. Just run `./gradlew installDebug` or `./gradlew installRelease` respectively.
 
-<img src="app/device_screenshot.png" height=640 align=center>
+<img src="app/device_screenshot.png" width=353 height=640 align=center>
