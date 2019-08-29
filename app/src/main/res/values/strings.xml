@@ -19,4 +19,6 @@
     <string name="label_output_encoded">Encoded Argon2 string (click to copy):</string>
 
     <string name="toast_copied_to_clipboard">Copied to clipboard ✨</string>
+    <string name="toast_failure">Failed %s</string>
+    <string name="toast_wall_time">Wall time: %d ms ✨</string>
 </resources>

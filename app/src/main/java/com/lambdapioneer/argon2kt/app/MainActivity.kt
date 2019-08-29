@@ -59,6 +59,7 @@ class MainActivity : AppCompatActivity() {
             val params = paramss[0]
 
             return try {
+                val startTimeNs = System.nanoTime()
                 val result = Argon2Kt().hash(
                     mode = params.mode,
                     password = params.passwordInUnicode.toByteArray(),
@@ -67,10 +68,12 @@ class MainActivity : AppCompatActivity() {
                     mCostInKibibyte = params.memory,
                     version = params.version
                 )
+                val endTimeNs = System.nanoTime()
 
                 Argon2AsyncTaskResult(
                     hashInHex = result.rawHashAsHexadecimal(),
-                    encodedOutputAsString = result.encodedOutputAsString()
+                    encodedOutputAsString = result.encodedOutputAsString(),
+                    timeInMs = (endTimeNs - startTimeNs) / 1000000 // ns=10E-9, ms=10E-3
                 )
             } catch (e: Exception) {
                 Argon2AsyncTaskResult(error = e)
@@ -82,9 +85,10 @@ class MainActivity : AppCompatActivity() {
 
             result.hashInHex?.apply { text_output_hash.text = this }
             result.encodedOutputAsString?.apply { text_output_encoded_string.text = this }
-            result.error?.apply {
-                Toast.makeText(applicationContext, "Failed: ${this.message}", Toast.LENGTH_SHORT).show()
-            }
+
+            fun showToast(message: String) = Toast.makeText(applicationContext, message, Toast.LENGTH_SHORT).show()
+            result.error?.apply { showToast(getString(R.string.toast_failure, this.message)) }
+            result.timeInMs?.apply { showToast(getString(R.string.toast_wall_time, this)) }
         }
     }
 
@@ -115,5 +119,6 @@ data class Argon2AsyncTaskParams(
 data class Argon2AsyncTaskResult(
     val hashInHex: String? = null,
     val encodedOutputAsString: String? = null,
-    val error: Exception? = null
+    val error: Exception? = null,
+    val timeInMs: Long? = null
 )
