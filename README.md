@@ -71,7 +71,7 @@ When contributing, please follow the following (common-sense) steps:
     - If you are after a 1-5 line fix, you might ignore this.
  - In the pull-request explain the high-level goal and your approach. That provides valuable context.
  - Convince others (and yourself) that the change is safe and sound.
-    - Run `./gradlew connectedAndroidTest` and manually test the APK in release configuration using `./gradlew installDebug`.
+    - Run `./gradlew connectedAndroidTest` and manually test the APK in release configuration using `./gradlew installRelease`.
 
 
 ## Sample app 📱
