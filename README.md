@@ -7,6 +7,7 @@ It uses JNI to bridge JVM/C and allows relying solely on direct-allocated ByteBu
 
 Argon2Kt is licensed under the MIT license. See the [LICENSE file](https://github.com/lambdapioneer/argon2kt/blob/master/LICENSE) in the root directory.
 
+[![CircleCI](https://circleci.com/gh/lambdapioneer/argon2kt.svg?style=svg)](https://circleci.com/gh/lambdapioneer/argon2kt)
 
 ## Quick start 👩‍💻 👨‍💻
 
