@@ -16,4 +16,4 @@ jobs:
           command: ./gradlew test
       - run:
           name: Build library and app in release configuration
-          command: ./gradlew assembleDebug
+          command: ./gradlew assembleRelease
