@@ -21,9 +21,9 @@ class Argon2KtUtilsInstrumentedTest {
             mCostInKibibyte = 4096 // only 4 MiB to speed-up testing
         )
 
-        // The returned iterationsCount ~14 for my Pixel 3.
+        // The returned iterationsCount ~14 for my Pixel 3; ~80 for x86 emulator
         assertThat(iterationsCount).isGreaterThan(2)
-        assertThat(iterationsCount).isLessThan(32)
+        assertThat(iterationsCount).isLessThan(128)
     }
 
 }
