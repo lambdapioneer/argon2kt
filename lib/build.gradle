@@ -4,8 +4,8 @@ apply plugin: "kotlin-android-extensions"
 apply plugin: "maven"
 
 ext {
-    version_code = 10
-    version_name = '1.0'
+    version_code = 100
+    version_name = '1.0.0'
 }
 
 android {
