@@ -101,7 +101,7 @@ class MainActivity : AppCompatActivity() {
     private fun copyStringToClipboard(string: String) {
         val clipboard = ContextCompat.getSystemService(applicationContext, ClipboardManager::class.java)
         val clip = ClipData.newPlainText("argon2", string)
-        clipboard!!.primaryClip = clip
+        clipboard!!.setPrimaryClip(clip)
 
         Toast.makeText(applicationContext, R.string.toast_copied_to_clipboard, Toast.LENGTH_SHORT).show()
     }

@@ -38,8 +38,8 @@ allprojects {
 
     project.ext {
         minSdkVersion = 15
-        compileSdkVersion = 28
-        targetSdkVersion = 28
+        compileSdkVersion = 29
+        targetSdkVersion = 29
     }
 }
 
