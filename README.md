@@ -80,7 +80,7 @@ The repository comes with a sample app that you can install both in debug and re
 
 <img src="app/device_screenshot.png" width=353 height=640 align=center>
 
-## Reference/BibText 📚
+## Reference/BibTex 📚
 
 If you want to reference Argon2Kt in documentation or articles, feel free to use this suggested BibTex snippet:
 
