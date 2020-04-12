@@ -12,12 +12,11 @@ import java.util.*
  * Decodes a hexadecimal String. Will throw if it encounters illegal characters (i.e. not 0-9a-fA-F) or if the String
  * has an odd length.
  */
-@ExperimentalUnsignedTypes
 fun String.decodeAsHex(): ByteArray {
     checkArgument(this.length % 2 == 0, "A valid hex string must have an even number of characters")
 
     return ByteArray(this.length / 2) {
-        this.substring(2 * it, 2 * it + 2).toUByte(radix = 16).toByte()
+        this.substring(2 * it, 2 * it + 2).toInt(radix = 16).toByte()
     }
 }
 
