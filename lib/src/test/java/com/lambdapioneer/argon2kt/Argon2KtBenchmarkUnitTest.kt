@@ -8,7 +8,7 @@ package com.lambdapioneer.argon2kt
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 
-class Argon2KtUtilsUnitTest {
+class Argon2KtBenchmarkUnitTest {
 
     @Test(expected = IllegalArgumentException::class)
     fun searchIterationCountForMetric_whenMetricReturns0_thenThrows() {

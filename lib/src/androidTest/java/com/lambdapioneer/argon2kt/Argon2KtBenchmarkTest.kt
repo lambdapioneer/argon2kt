@@ -8,13 +8,13 @@ package com.lambdapioneer.argon2kt
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 
-class Argon2KtUtilsInstrumentedTest {
+class Argon2KtBenchmarkUtilsInstrumentedTest {
 
     @Test
     fun searchIterationCountForArgon2_whenGivenSensibleConfiguration_thenResultSensible() {
         // As we cannot make assumptions about the tested device, we will just make sure that the returned iteration
         // count is in a sensible range. See the "Argon2KtUtilsUnitTest" for white-box tests of the underlying logic.
-        val iterationsCount = searchIterationCountForArgon2(
+        val iterationsCount = Argon2KtBenchmark.searchIterationCount(
             argon2Kt = Argon2Kt(),
             argon2Mode = Argon2Mode.ARGON2_ID,
             targetTimeMs = 1000,

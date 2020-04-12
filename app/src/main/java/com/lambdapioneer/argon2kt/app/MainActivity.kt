@@ -18,7 +18,7 @@ import androidx.core.content.ContextCompat
 import com.lambdapioneer.argon2kt.Argon2Kt
 import com.lambdapioneer.argon2kt.Argon2Mode
 import com.lambdapioneer.argon2kt.Argon2Version
-import com.lambdapioneer.argon2kt.decodeAsHex
+import com.lambdapioneer.argon2kt.Argon2KtUtils
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
                 val result = Argon2Kt().hash(
                     mode = params.mode,
                     password = params.passwordInUnicode.toByteArray(),
-                    salt = params.saltInHex.decodeAsHex(),
+                    salt = Argon2KtUtils.decodeAsHex(params.saltInHex),
                     tCostInIterations = params.iterations,
                     mCostInKibibyte = params.memory,
                     version = params.version

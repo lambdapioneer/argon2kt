@@ -8,7 +8,7 @@ package com.lambdapioneer.argon2kt
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 
-class UtilsTest {
+class Argon2KtUtilsTest {
 
     @Test
     fun decode_whenEmptyString_thenEmptyArray() {
