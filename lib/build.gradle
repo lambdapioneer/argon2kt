@@ -5,7 +5,7 @@ apply plugin: "maven"
 
 ext {
     version_code = 100
-    version_name = '1.0.0'
+    version_name = '1.1.0'
 }
 
 android {
