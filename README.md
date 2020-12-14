@@ -14,7 +14,7 @@ Argon2Kt is licensed under the MIT license. See the [LICENSE file](https://githu
 Add the dependency to your gradle.build file:
 
 ```groovy
-implementation 'com.lambdapioneer.argon2kt:argon2kt:1.1.0'
+implementation 'com.lambdapioneer.argon2kt:argon2kt:1.2.0'
 ```
 
 Use the `Argon2Kt` class to hash and verify using Argon2:
