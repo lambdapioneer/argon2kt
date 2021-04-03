@@ -10,23 +10,24 @@ buildscript {
         roboelectric_version = '4.3'
         testrunner_version = '1.3.0'
 
-        // for bintray upload and publishing
-        gradle_bintray_plugin_version = '1.8.1'
-        android_maven_gradle_plugin_version = '2.1'
+        // for maven central upload and publishing
+        gradle_maven_publish_plugin_version = '0.14.2'
+        dokka_gradle_plugin_version = '1.4.30'
     }
 
     repositories {
         google()
         jcenter()
+        mavenCentral()
     }
 
     dependencies {
         classpath "com.android.tools.build:gradle:$gradle_version"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
-        // for bintray upload and publishing
-        classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:$gradle_bintray_plugin_version"
-        classpath "com.github.dcendents:android-maven-gradle-plugin:$android_maven_gradle_plugin_version"
+        // for maven central upload and publishing
+        classpath "com.vanniktech:gradle-maven-publish-plugin:$gradle_maven_publish_plugin_version"
+        classpath "org.jetbrains.dokka:dokka-gradle-plugin:$dokka_gradle_plugin_version"
     }
 }
 
