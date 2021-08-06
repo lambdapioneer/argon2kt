@@ -1,9 +1,11 @@
 # Argon2Kt: An Android/Kotlin binding for the Argon2 hash
 
-Argon2Kt is a binding for the [Argon2 password hash](https://github.com/P-H-C/phc-winner-argon2) that allows to use it
+Argon2Kt is a binding for the [Argon2 password hash](https://github.com/P-H-C/phc-winner-argon2) that allows to do memory-hard password hashing
 easily and securely on Android.
+Check out [this blog post](https://www.danielhugenroth.com/posts/2021_06_password_hashing_on_android/) for an introduction to password-based key derivation on Android.
 
-It uses JNI to bridge JVM/C and allows relying solely on direct-allocated ByteBuffers (see below). Naturally, it comes with an extensive test coverage and a sample app.
+This library uses JNI to bridge JVM/C and allows relying solely on direct-allocated ByteBuffers (see below).
+Naturally, it comes with an extensive test coverage and a sample app.
 
 Argon2Kt is licensed under the MIT license. See the [LICENSE file](https://github.com/lambdapioneer/argon2kt/blob/master/LICENSE) in the root directory.
 
