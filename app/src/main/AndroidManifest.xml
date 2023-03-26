@@ -3,6 +3,7 @@
           xmlns:tools="http://schemas.android.com/tools" package="com.lambdapioneer.argon2kt.app">
 
     <application
+            android:name="androidx.multidex.MultiDexApplication"
             android:allowBackup="false"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"
