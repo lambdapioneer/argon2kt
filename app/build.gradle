@@ -49,7 +49,7 @@ android {
 
 dependencies {
     implementation project(":lib")
-    // implementation 'com.lambdapioneer.argon2kt:argon2kt:1.3.0'
+    // implementation 'com.lambdapioneer.argon2kt:argon2kt:1.4.0'
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation "androidx.appcompat:appcompat:$appcompat_version"
