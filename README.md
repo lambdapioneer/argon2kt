@@ -1,5 +1,7 @@
 # Argon2Kt: An Android/Kotlin binding for the Argon2 hash
 
+[![Android](https://github.com/lambdapioneer/argon2kt/actions/workflows/android.yaml/badge.svg?branch=main)](https://github.com/lambdapioneer/argon2kt/actions/workflows/android.yaml)
+
 Argon2Kt is a binding for the [Argon2 password hash](https://github.com/P-H-C/phc-winner-argon2) that allows to do memory-hard password hashing
 easily and securely on Android.
 Check out [this blog post](https://www.danielhugenroth.com/posts/2021_06_password_hashing_on_android/) for an introduction to password-based key derivation on Android.
@@ -8,8 +10,6 @@ This library uses JNI to bridge JVM/C and allows relying solely on direct-alloca
 Naturally, it comes with an extensive test coverage and a sample app.
 
 Argon2Kt is licensed under the MIT license. See the [LICENSE file](https://github.com/lambdapioneer/argon2kt/blob/master/LICENSE) in the root directory.
-
-[![CircleCI](https://circleci.com/gh/lambdapioneer/argon2kt.svg?style=svg)](https://circleci.com/gh/lambdapioneer/argon2kt)
 
 ## Quick start 👩‍💻 👨‍💻
 
@@ -40,7 +40,7 @@ println("Encoded string: ${hashResult.encodedOutputAsString()}")
 // verify a password against an encoded string representation
 val verificationResult : Boolean = argon2Kt.verify(
   mode = Argon2Mode.ARGON2_I,
-  encodedString = hashResult.encodedOutputAsString()
+  encodedString = hashResult.encodedOutputAsString(),
   password = passwordByteArray,
 )
 ```
