@@ -3,6 +3,9 @@
 // This source code is licensed under the MIT license found in the
 // LICENSE file in the root directory of this source tree.
 
+// using the deprecated AsyncTask for simplicity in demo code
+@file:Suppress( "DEPRECATION")
+
 package com.lambdapioneer.argon2kt.app
 
 import android.annotation.SuppressLint
@@ -56,10 +59,13 @@ class MainActivity : AppCompatActivity() {
 
     @SuppressLint("StaticFieldLeak")
     inner class Argon2AsyncTask : AsyncTask<Argon2AsyncTaskParams, Void, Argon2AsyncTaskResult>() {
+
+        @Deprecated("Deprecated in Java")
         override fun onPreExecute() {
             setProgressIndicator(true)
         }
 
+        @Deprecated("Deprecated in Java")
         override fun doInBackground(vararg paramss: Argon2AsyncTaskParams): Argon2AsyncTaskResult {
             val params = paramss[0]
 
@@ -85,6 +91,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        @Deprecated("Deprecated in Java")
         override fun onPostExecute(result: Argon2AsyncTaskResult) {
             setProgressIndicator(false)
 
