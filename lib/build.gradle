@@ -5,11 +5,11 @@ apply plugin: "maven-publish"
 
 android {
     namespace 'com.lambdapioneer.argon2kt'
-    compileSdkVersion project.ext.compileSdkVersion
+    compileSdk project.ext.compileSdkVersion
 
     defaultConfig {
-        minSdkVersion project.ext.minSdkVersion
-        targetSdkVersion project.ext.targetSdkVersion
+        minSdk project.ext.minSdkVersion
+        targetSdk project.ext.targetSdkVersion
 
         multiDexEnabled true
 
