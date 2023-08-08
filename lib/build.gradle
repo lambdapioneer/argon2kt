@@ -1,7 +1,9 @@
-apply plugin: "com.android.library"
-apply plugin: "com.vanniktech.maven.publish"
-apply plugin: "kotlin-android"
-apply plugin: "maven-publish"
+plugins {
+    id 'com.android.library'
+    id 'com.vanniktech.maven.publish'
+    id 'kotlin-android'
+    id 'maven-publish'
+}
 
 android {
     namespace 'com.lambdapioneer.argon2kt'
