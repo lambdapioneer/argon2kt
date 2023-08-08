@@ -10,7 +10,7 @@ import java.nio.ByteBuffer
 internal const val ARGON2KT_DEFAULT_T_COST = 1 // number of iterations
 internal const val ARGON2KT_DEFAULT_M_COST = 65536 // resulting in 64 MiB memory cost
 internal const val ARGON2KT_DEFAULT_PARALLELISM = 2 // running two threads in parallel
-internal const val ARGON2KT_DEFAULT_HASH_LENGTH = 32 // resulting in 32 bytes = 128 bit output
+internal const val ARGON2KT_DEFAULT_HASH_LENGTH = 32 // resulting in 32 bytes = 256 bit output
 internal val ARGON2KT_DEFAULT_VERSION = Argon2Version.V13 // default to newest version V13
 
 /**
