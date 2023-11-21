@@ -23,10 +23,6 @@ buildscript {
     dependencies {
         classpath "com.android.tools.build:gradle:$agp_version"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-
-        // for maven central upload and publishing
-        classpath "com.vanniktech:gradle-maven-publish-plugin:$gradle_maven_publish_plugin_version"
-        classpath "org.jetbrains.dokka:dokka-gradle-plugin:$dokka_gradle_plugin_version"
     }
 }
 

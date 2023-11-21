@@ -1,6 +1,5 @@
 plugins {
     id 'com.android.library'
-    id 'com.vanniktech.maven.publish'
     id 'kotlin-android'
     id 'maven-publish'
 }
@@ -59,6 +58,58 @@ android {
         singleVariant('release') {
             withSourcesJar()
             withJavadocJar()
+        }
+    }
+}
+
+publishing {
+    publications {
+        release(MavenPublication) {
+            groupId = GROUP
+            artifactId = POM_ARTIFACT_ID
+            version = VERSION_NAME
+            pom {
+                name = POM_NAME
+                description = POM_DESCRIPTION
+                url = POM_URL
+                licenses {
+                    license {
+                        name = POM_LICENCE_NAME
+                        url = POM_LICENCE_URL
+                    }
+                }
+                developers {
+                    developer {
+                        id = POM_DEVELOPER_ID
+                        name = POM_DEVELOPER_NAME
+                        email = POM_DEVELOPER_URL
+                    }
+                }
+                scm {
+                    connection = POM_SCM_CONNECTION
+                    developerConnection = POM_SCM_DEV_CONNECTION
+                    url = POM_SCM_URL
+                }
+            }
+
+            afterEvaluate {
+                from components.release
+            }
+        }
+    }
+    repositories {
+        maven {
+            name = 'local'
+            url = "${project.buildDir}/repo"
+        }
+        maven {
+            name = "sonatype"
+            url = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
+
+            credentials {
+                username project.findProperty("ossrhUsername") ?: ""
+                password project.findProperty("ossrhPassword") ?: ""
+            }
         }
     }
 }
