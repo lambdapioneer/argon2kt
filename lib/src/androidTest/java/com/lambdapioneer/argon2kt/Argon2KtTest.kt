@@ -58,6 +58,7 @@ class Argon2KtTest {
                 encoded = "\$argon2i\$v=19\$m=65536,t=2,p=1c29tZXNhbHQ\$wWKIMhR9lyDFvRz9YTZweHKfbftvj+qf+YFY4NeBbtA",
                 password = "password".toByteArray()
             )
+            assertThisLineNotExecuted()
         } catch (e: Argon2Exception) {
             assertThat(e.message).containsIgnoringCase("-32")
             assertThat(e.message).containsIgnoringCase("ARGON2_DECODING_FAIL")
@@ -72,6 +73,7 @@ class Argon2KtTest {
                 encoded = "\$argon2i\$v=19\$m=65536,t=2,p=1\$c29tZXNhbHQwWKIMhR9lyDFvRz9YTZweHKfbftvj+qf+YFY4NeBbtA",
                 password = "password".toByteArray()
             )
+            assertThisLineNotExecuted()
         } catch (e: Argon2Exception) {
             assertThat(e.message).containsIgnoringCase("-32")
             assertThat(e.message).containsIgnoringCase("ARGON2_DECODING_FAIL")
@@ -86,6 +88,7 @@ class Argon2KtTest {
                 encoded = "\$argon2i\$v=19\$m=65536,t=2,p=1\$\$9sTbSlTio3Biev89thdrlKKiCaYsjjYVJxGAL3swxpQ",
                 password = "password".toByteArray()
             )
+            assertThisLineNotExecuted()
         } catch (e: Argon2Exception) {
             assertThat(e.message).containsIgnoringCase("-6")
             assertThat(e.message).containsIgnoringCase("ARGON2_SALT_TOO_SHORT")
@@ -368,4 +371,4 @@ private fun runTest(
     assertThat(verificationResult).isTrue()
 }
 
-private fun assertThisLineNotExecuted() = fail<Void>("This line shouldn't be executed (most likely expected exception")
+private fun assertThisLineNotExecuted() = fail<Void>("This line shouldn't be executed (most likely expected exception)")
