@@ -2,11 +2,11 @@ buildscript {
     ext {
         appcompat_version = '1.6.1'
         espresso_version = '3.5.1'
-        agp_version = '8.1.0'
+        agp_version = '8.1.1'
         jassert_version = '3.24.2'
         junit_version = '4.13.2'
         kotlin_version = '1.8.21'
-        ktx_version = '1.10.1'
+        ktx_version = '1.12.0'
         roboelectric_version = '4.10.3'
         testrunner_version = '1.5.2'
 
@@ -38,8 +38,8 @@ allprojects {
 
     project.ext {
         minSdkVersion = 15
-        compileSdkVersion = 33
-        targetSdkVersion = 33
+        compileSdkVersion = 34
+        targetSdkVersion = 34
         ndkVersion = "22.1.7171670"
     }
 }
