@@ -2,12 +2,12 @@ buildscript {
     ext {
         appcompat_version = '1.6.1'
         espresso_version = '3.5.1'
-        agp_version = '7.2.0'
-        jassert_version = '3.11.1'
+        agp_version = '8.1.0'
+        jassert_version = '3.24.2'
         junit_version = '4.13.2'
-        kotlin_version = '1.8.0'
-        ktx_version = '1.9.0'
-        roboelectric_version = '4.3'
+        kotlin_version = '1.8.21'
+        ktx_version = '1.10.1'
+        roboelectric_version = '4.10.3'
         testrunner_version = '1.5.2'
 
         // for maven central upload and publishing
@@ -44,6 +44,6 @@ allprojects {
     }
 }
 
-task clean(type: Delete) {
+tasks.register('clean', Delete) {
     delete rootProject.buildDir
 }

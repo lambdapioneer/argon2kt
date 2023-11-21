@@ -1,14 +1,17 @@
-apply plugin: "com.android.library"
-apply plugin: "com.vanniktech.maven.publish"
-apply plugin: "kotlin-android"
-apply plugin: "maven-publish"
+plugins {
+    id 'com.android.library'
+    id 'com.vanniktech.maven.publish'
+    id 'kotlin-android'
+    id 'maven-publish'
+}
 
 android {
-    compileSdkVersion project.ext.compileSdkVersion
+    namespace 'com.lambdapioneer.argon2kt'
+    compileSdk project.ext.compileSdkVersion
 
     defaultConfig {
-        minSdkVersion project.ext.minSdkVersion
-        targetSdkVersion project.ext.targetSdkVersion
+        minSdk project.ext.minSdkVersion
+        targetSdk project.ext.targetSdkVersion
 
         multiDexEnabled true
 
@@ -44,15 +47,25 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+
+    publishing {
+        singleVariant('release') {
+            withSourcesJar()
+            withJavadocJar()
+        }
     }
 }
 
 dependencies {
     implementation "androidx.appcompat:appcompat:$appcompat_version"
     implementation "androidx.core:core-ktx:$ktx_version"
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     testImplementation "junit:junit:$junit_version"
     testImplementation "org.assertj:assertj-core:$jassert_version"

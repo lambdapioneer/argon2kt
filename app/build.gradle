@@ -1,14 +1,17 @@
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
 
 android {
-    compileSdkVersion project.ext.compileSdkVersion
+    namespace 'com.lambdapioneer.argon2kt.app'
+    compileSdk project.ext.compileSdkVersion
 
     defaultConfig {
         applicationId "com.lambdapioneer.argon2kt.app"
 
-        minSdkVersion project.ext.minSdkVersion
-        targetSdkVersion project.ext.targetSdkVersion
+        minSdk project.ext.minSdkVersion
+        targetSdk project.ext.targetSdkVersion
 
         versionCode 1
         versionName "1.0"
@@ -42,8 +45,12 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = '17'
     }
 }
 
@@ -51,7 +58,6 @@ dependencies {
     implementation project(":lib")
     // implementation 'com.lambdapioneer.argon2kt:argon2kt:1.4.0'
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation "androidx.appcompat:appcompat:$appcompat_version"
     implementation "androidx.core:core-ktx:$ktx_version"
     implementation 'androidx.multidex:multidex:2.0.1'
