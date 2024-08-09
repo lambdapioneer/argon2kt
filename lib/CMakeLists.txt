@@ -21,6 +21,9 @@ add_library(argon2native SHARED ${argon2native_SOURCES})
 target_compile_options(argon2native PRIVATE)
 target_include_directories(argon2native PUBLIC ${argon2native_DIR})
 
+# Add support for 16kB page size for Android 15.
+target_link_options(${CMAKE_PROJECT_NAME} PRIVATE "-Wl,-z,max-page-size=16384")
+
 #
 # JNI integration (argon2jni)
 #
@@ -38,3 +41,6 @@ target_compile_options(argon2jni PRIVATE)
 target_include_directories(argon2jni PUBLIC ${argon2jni_DIR})
 
 target_link_libraries(argon2jni argon2native)
+
+# Add support for 16kB page size for Android 15.
+target_link_options(${CMAKE_PROJECT_NAME} PRIVATE "-Wl,-z,max-page-size=16384")
