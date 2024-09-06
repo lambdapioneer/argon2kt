@@ -116,7 +116,8 @@ publishing {
 }
 
 signing {
-    sign publishing.publications
+    useGpgCmd()
+    sign(publishing.publications["release"])
 }
 
 dependencies {
