@@ -116,7 +116,8 @@ publishing {
 }
 
 signing {
-    sign publishing.publications
+    useGpgCmd()
+    sign(publishing.publications["release"])
 }
 
 dependencies {
@@ -124,10 +125,10 @@ dependencies {
     implementation "androidx.core:core-ktx:$ktx_version"
 
     testImplementation "junit:junit:$junit_version"
-    testImplementation "org.assertj:assertj-core:$jassert_version"
+    testImplementation "com.google.truth:truth:$truth_version"
     testImplementation "org.robolectric:robolectric:$roboelectric_version"
 
     androidTestImplementation "androidx.test:runner:$testrunner_version"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
-    androidTestImplementation "org.assertj:assertj-core:$jassert_version"
+    androidTestImplementation "com.google.truth:truth:$truth_version"
 }

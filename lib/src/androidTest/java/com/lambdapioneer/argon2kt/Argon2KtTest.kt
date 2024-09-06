@@ -5,8 +5,8 @@
 
 package com.lambdapioneer.argon2kt
 
-import org.assertj.core.api.Assertions.assertThat
-import org.assertj.core.api.Assertions.fail
+import com.google.common.truth.Truth.assertThat
+import org.junit.Assert.fail
 import org.junit.Test
 
 class Argon2KtTest {
@@ -27,7 +27,7 @@ class Argon2KtTest {
                 mCostInKibibyte = 1024,
                 hashLengthInBytes = 32
             )
-            assertThat(result.rawHashAsByteArray()).hasSize(32)
+            assertThat(result.rawHashAsByteArray()).hasLength(32)
         }
     }
 
@@ -41,8 +41,8 @@ class Argon2KtTest {
             )
             assertThisLineNotExecuted()
         } catch (e: Argon2Exception) {
-            assertThat(e.message).containsIgnoringCase("-6")
-            assertThat(e.message).containsIgnoringCase("ARGON2_SALT_TOO_SHORT")
+            assertThat(e.message).contains("-6")
+            assertThat(e.message).contains("ARGON2_SALT_TOO_SHORT")
         }
     }
 
@@ -60,8 +60,8 @@ class Argon2KtTest {
             )
             assertThisLineNotExecuted()
         } catch (e: Argon2Exception) {
-            assertThat(e.message).containsIgnoringCase("-32")
-            assertThat(e.message).containsIgnoringCase("ARGON2_DECODING_FAIL")
+            assertThat(e.message).contains("-32")
+            assertThat(e.message).contains("ARGON2_DECODING_FAIL")
         }
     }
 
@@ -75,8 +75,8 @@ class Argon2KtTest {
             )
             assertThisLineNotExecuted()
         } catch (e: Argon2Exception) {
-            assertThat(e.message).containsIgnoringCase("-32")
-            assertThat(e.message).containsIgnoringCase("ARGON2_DECODING_FAIL")
+            assertThat(e.message).contains("-32")
+            assertThat(e.message).contains("ARGON2_DECODING_FAIL")
         }
     }
 
@@ -90,8 +90,8 @@ class Argon2KtTest {
             )
             assertThisLineNotExecuted()
         } catch (e: Argon2Exception) {
-            assertThat(e.message).containsIgnoringCase("-6")
-            assertThat(e.message).containsIgnoringCase("ARGON2_SALT_TOO_SHORT")
+            assertThat(e.message).contains("-6")
+            assertThat(e.message).contains("ARGON2_SALT_TOO_SHORT")
         }
     }
 
@@ -371,4 +371,4 @@ private fun runTest(
     assertThat(verificationResult).isTrue()
 }
 
-private fun assertThisLineNotExecuted() = fail<Void>("This line shouldn't be executed (most likely expected exception)")
+private fun assertThisLineNotExecuted() = fail("This line shouldn't be executed (most likely expected exception)")

@@ -5,7 +5,7 @@
 
 package com.lambdapioneer.argon2kt
 
-import org.assertj.core.api.Assertions.assertThat
+import com.google.common.truth.Truth.assertThat;
 import org.junit.Test
 import java.lang.IllegalArgumentException
 
@@ -15,8 +15,8 @@ class Argon2ErrorTest {
     fun argon2Exception_whenCreatedFromCode_thenContainsMessageAndCode() {
         val error = Argon2Exception.fromErrorCode(-6)
 
-        assertThat(error.message).containsIgnoringCase("ARGON2_SALT_TOO_SHORT")
-        assertThat(error.message).containsIgnoringCase("-6")
+        assertThat(error.message).contains("ARGON2_SALT_TOO_SHORT")
+        assertThat(error.message).contains("-6")
     }
 
     @Test(expected = IllegalArgumentException::class)
