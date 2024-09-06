@@ -1,14 +1,14 @@
 buildscript {
     ext {
-        appcompat_version = '1.6.1'
-        espresso_version = '3.5.1'
+        appcompat_version = '1.7.0'
+        espresso_version = '3.6.1'
         agp_version = '8.1.1'
-        jassert_version = '3.24.2'
         junit_version = '4.13.2'
         kotlin_version = '1.8.21'
-        ktx_version = '1.12.0'
+        ktx_version = '1.13.1'
         roboelectric_version = '4.10.3'
-        testrunner_version = '1.5.2'
+        testrunner_version = '1.6.2'
+        truth_version = '1.4.4'
 
         // for maven central upload and publishing
         gradle_maven_publish_plugin_version = '0.14.2'
@@ -33,7 +33,7 @@ allprojects {
     }
 
     project.ext {
-        minSdkVersion = 15
+        minSdkVersion = 21
         compileSdkVersion = 34
         targetSdkVersion = 34
         ndkVersion = "22.1.7171670"

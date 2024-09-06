@@ -61,10 +61,4 @@ dependencies {
     implementation "androidx.appcompat:appcompat:$appcompat_version"
     implementation "androidx.core:core-ktx:$ktx_version"
     implementation 'androidx.multidex:multidex:2.0.1'
-
-    testImplementation "junit:junit:$junit_version"
-
-    androidTestImplementation "androidx.test:runner:$testrunner_version"
-    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
-    androidTestImplementation "org.assertj:assertj-core:$jassert_version"
 }

@@ -5,7 +5,7 @@
 
 package com.lambdapioneer.argon2kt
 
-import org.assertj.core.api.Assertions.assertThat
+import com.google.common.truth.Truth.assertThat;
 import org.junit.Test
 
 class Argon2KtUtilsTest {
