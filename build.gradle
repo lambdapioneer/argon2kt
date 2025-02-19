@@ -4,7 +4,7 @@ buildscript {
         espresso_version = '3.6.1'
         agp_version = '8.8.1'
         junit_version = '4.13.2'
-        kotlin_version = '1.8.21'
+        kotlin_version = '2.0.21'
         ktx_version = '1.15.0'
         roboelectric_version = '4.14.1'
         testrunner_version = '1.6.2'

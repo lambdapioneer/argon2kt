@@ -5,8 +5,9 @@
 # Files for the ART/Dalvik VM
 *.dex
 
-# Java class files
+# Java class / Kotlin compiler files
 *.class
+.kotlin/
 
 # Generated files
 bin/
