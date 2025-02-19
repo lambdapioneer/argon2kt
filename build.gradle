@@ -2,17 +2,16 @@ buildscript {
     ext {
         appcompat_version = '1.7.0'
         espresso_version = '3.6.1'
-        agp_version = '8.6.0'
+        agp_version = '8.8.1'
         junit_version = '4.13.2'
         kotlin_version = '1.8.21'
-        ktx_version = '1.13.1'
-        roboelectric_version = '4.10.3'
+        ktx_version = '1.15.0'
+        roboelectric_version = '4.14.1'
         testrunner_version = '1.6.2'
         truth_version = '1.4.4'
 
         // for maven central upload and publishing
-        gradle_maven_publish_plugin_version = '0.14.2'
-        dokka_gradle_plugin_version = '1.4.30'
+        dokka_gradle_plugin_version = '2.0.0'
     }
 
     repositories {
