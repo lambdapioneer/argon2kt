@@ -7,11 +7,11 @@ plugins {
 
 android {
     namespace 'com.lambdapioneer.argon2kt'
-    compileSdk project.ext.compileSdkVersion
+    compileSdk project.ext.compileSdk
 
     defaultConfig {
         minSdk project.ext.minSdkVersion
-        targetSdk project.ext.targetSdkVersion
+        targetSdk project.ext.targetSdk
 
         multiDexEnabled true
 
