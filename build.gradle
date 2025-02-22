@@ -35,7 +35,7 @@ allprojects {
         minSdkVersion = 21
         compileSdk = 35
         targetSdk = 35
-        ndkVersion = "22.1.7171670"
+        ndkVersion = "27.2.12479018"
     }
 }
 
