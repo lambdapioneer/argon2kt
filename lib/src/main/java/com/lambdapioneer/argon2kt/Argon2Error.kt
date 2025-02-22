@@ -59,8 +59,7 @@ enum class Argon2Error constructor(val errorCode: Int) {
     companion object {
 
         fun fromErrorCode(errorCode: Int): Argon2Error {
-            val values = values()
-            for (argonError in values) {
+            for (argonError in entries) {
                 if (errorCode == argonError.errorCode) {
                     return argonError
                 }
