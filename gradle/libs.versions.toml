@@ -1,0 +1,33 @@
+[versions]
+minSdk = "21"
+targetSdk = "35"
+compileSdk = "35"
+ndk = "27.2.12479018"
+
+agp = "8.8.1"
+kotlin = "2.0.21"
+appcompat = "1.7.0"
+coreKtx = "1.15.0"
+multidex = "2.0.1"
+
+junit = "4.13.2"
+truth = "1.4.4"
+roboeletric = "4.14.1"
+espressoCore = "3.6.1"
+testRunner = "1.6.2"
+
+[libraries]
+androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
+androidx-multidex = { module = "androidx.multidex:multidex", version.ref = "multidex" }
+
+androidx-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "espressoCore" }
+androidx-test-runner = { module = "androidx.test:runner", version.ref = "testRunner" }
+
+google-truth = { module = "com.google.truth:truth", version.ref = "truth" }
+junit = { module = "junit:junit", version.ref = "junit" }
+roboeletric = { module = "org.robolectric:robolectric", version.ref = "roboeletric" }
+
+[plugins]
+androidApplication = { id = "com.android.application", version.ref = "agp" }
+jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }

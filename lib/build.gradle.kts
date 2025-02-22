@@ -2,6 +2,12 @@
 
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
+fun getSdkVersion(version: Provider<String>) = version.get().toInt()
+
+fun getVersion(version: Provider<String>) = version.get()
+
+fun getProperty(name: String) = project.extra[name] as String
+
 plugins {
     id("com.android.library")
     id("kotlin-android")
@@ -11,22 +17,22 @@ plugins {
 
 android {
     namespace = "com.lambdapioneer.argon2kt"
-    compileSdk = 35
+    compileSdk = getSdkVersion(libs.versions.compileSdk)
 
     defaultConfig {
-        minSdk = 21
+        minSdk = getSdkVersion(libs.versions.minSdk)
         testOptions {
-            targetSdk = 35
+            targetSdk = getSdkVersion(libs.versions.targetSdk)
         }
         lint {
-            targetSdk = 35
+            targetSdk = getSdkVersion(libs.versions.targetSdk)
         }
 
         multiDexEnabled = true
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
-        ndkVersion = "27.2.12479018"
+        ndkVersion = getVersion(libs.versions.ndk)
 
         ndk {
             abiFilters.addAll(listOf("x86", "armeabi-v7a", "x86_64", "arm64-v8a"))
@@ -76,8 +82,6 @@ android {
         }
     }
 }
-
-fun getProperty(name: String) = project.extra[name] as String
 
 publishing {
     publications {
@@ -138,14 +142,14 @@ signing {
 }
 
 dependencies {
-    implementation("androidx.appcompat:appcompat:1.7.0")
-    implementation("androidx.core:core-ktx:1.15.0")
+    implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.core.ktx)
 
-    testImplementation("junit:junit:4.13.2")
-    testImplementation("com.google.truth:truth:1.4.4")
-    testImplementation("org.robolectric:robolectric:4.14.1")
+    testImplementation(libs.junit)
+    testImplementation(libs.google.truth)
+    testImplementation(libs.roboeletric)
 
-    androidTestImplementation("androidx.test:runner:1.6.2")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
-    androidTestImplementation("com.google.truth:truth:1.4.4")
+    androidTestImplementation(libs.androidx.test.runner)
+    androidTestImplementation(libs.androidx.espresso.core)
+    androidTestImplementation(libs.google.truth)
 }
