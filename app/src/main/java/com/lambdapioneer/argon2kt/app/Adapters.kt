@@ -20,9 +20,9 @@ class ArgonModeAdapter(private val layoutInflater: LayoutInflater) : BaseAdapter
         return view
     }
 
-    override fun getItem(position: Int): Any = Argon2Mode.values()[position]
+    override fun getItem(position: Int): Any = Argon2Mode.entries[position]
     override fun getItemId(position: Int): Long = position.toLong()
-    override fun getCount(): Int = Argon2Mode.values().size
+    override fun getCount(): Int = Argon2Mode.entries.size
 }
 
 class ArgonVersionAdapter(private val layoutInflater: LayoutInflater) : BaseAdapter() {
@@ -32,7 +32,7 @@ class ArgonVersionAdapter(private val layoutInflater: LayoutInflater) : BaseAdap
         return view
     }
 
-    override fun getItem(position: Int): Any = Argon2Version.values()[position]
+    override fun getItem(position: Int): Any = Argon2Version.entries[position]
     override fun getItemId(position: Int): Long = position.toLong()
-    override fun getCount(): Int = Argon2Version.values().size
+    override fun getCount(): Int = Argon2Version.entries.size
 }
