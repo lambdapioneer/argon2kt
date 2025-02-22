@@ -1,5 +1,7 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
+fun getSdkVersion(version: Provider<String>) = version.get().toInt()
+
 plugins {
     id("com.android.application")
     id("kotlin-android")
@@ -7,13 +9,13 @@ plugins {
 
 android {
     namespace = "com.lambdapioneer.argon2kt.app"
-    compileSdk = 35
+    compileSdk = getSdkVersion(libs.versions.compileSdk)
 
     defaultConfig {
         applicationId = "com.lambdapioneer.argon2kt.app"
 
-        minSdk = 21
-        targetSdk = 35
+        minSdk = getSdkVersion(libs.versions.minSdk)
+        targetSdk = getSdkVersion(libs.versions.targetSdk)
 
         versionCode = 1
         versionName = "1.0"
@@ -65,7 +67,7 @@ dependencies {
     implementation(project(":lib"))
     // implementation("com.lambdapioneer.argon2kt:argon2kt:1.6.0")
 
-    implementation("androidx.appcompat:appcompat:1.7.0")
-    implementation("androidx.core:core-ktx:1.15.0")
-    implementation("androidx.multidex:multidex:2.0.1")
+    implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.multidex)
 }
