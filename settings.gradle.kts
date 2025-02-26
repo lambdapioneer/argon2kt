@@ -1,3 +1,4 @@
+// Ignore repositories API warnings for dependency resolution
 @file:Suppress("UnstableApiUsage")
 
 pluginManagement {
