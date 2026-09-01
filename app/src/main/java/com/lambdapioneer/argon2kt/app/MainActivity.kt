@@ -37,9 +37,13 @@ class MainActivity : AppCompatActivity() {
         binding.spinnerArgonMode.adapter = ArgonModeAdapter(layoutInflater)
         binding.spinnerArgonVersion.adapter = ArgonVersionAdapter(layoutInflater)
         binding.spinnerArgonVersion.setSelection(1)
+
+        binding.buttonRun.setOnClickListener { onClickButtonRun() }
+        binding.textOutputHash.setOnClickListener(::onOutputClicked)
+        binding.textOutputEncodedString.setOnClickListener(::onOutputClicked)
     }
 
-    fun onClickButtonRun(@Suppress("UNUSED_PARAMETER") view: View) {
+    private fun onClickButtonRun() {
         try {
             val params = Argon2AsyncTaskParams(
                 saltInHex = binding.editSalt.text.toString(),
@@ -55,7 +59,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun onOutputClicked(view: View) = copyStringToClipboard((view as TextView).text.toString())
+    private fun onOutputClicked(view: View) = copyStringToClipboard((view as TextView).text.toString())
 
     @SuppressLint("StaticFieldLeak")
     inner class Argon2AsyncTask : AsyncTask<Argon2AsyncTaskParams, Void, Argon2AsyncTaskResult>() {

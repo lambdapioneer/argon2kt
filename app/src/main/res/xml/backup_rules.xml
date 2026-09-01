@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The demo app stores no user data, so nothing is backed up (Android 11 and below). -->
+<full-backup-content>
+    <exclude domain="root"/>
+    <exclude domain="file"/>
+    <exclude domain="database"/>
+    <exclude domain="sharedpref"/>
+    <exclude domain="external"/>
+</full-backup-content>

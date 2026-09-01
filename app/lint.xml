@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <!-- Newer releases of these libraries require minSdk 23, but the library supports minSdk 21 -->
+    <issue id="GradleDependency">
+        <ignore regexp="androidx\.appcompat:appcompat|androidx\.core:core-ktx"/>
+    </issue>
+</lint>

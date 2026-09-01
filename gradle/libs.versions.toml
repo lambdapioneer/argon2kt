@@ -7,6 +7,7 @@ ndk = "27.3.13750724"
 agp = "9.4.0"
 kotlin = "2.4.10"
 annotation = "1.10.0"
+# Newer appcompat and core-ktx releases require minSdk 23
 appcompat = "1.7.1"
 coreKtx = "1.16.0"
 
