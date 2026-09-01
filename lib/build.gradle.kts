@@ -26,8 +26,6 @@ android {
             targetSdk = getSdkVersion(libs.versions.targetSdk)
         }
 
-        multiDexEnabled = true
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
         ndk {
@@ -134,8 +132,7 @@ signing {
 }
 
 dependencies {
-    implementation(libs.androidx.appcompat)
-    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.annotation)
 
     testImplementation(libs.junit)
     testImplementation(libs.google.truth)

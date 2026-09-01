@@ -5,26 +5,28 @@ compileSdk = "37"
 ndk = "27.3.13750724"
 
 agp = "9.4.0"
-appcompat = "1.7.0"
-coreKtx = "1.15.0"
-multidex = "2.0.1"
+kotlin = "2.4.10"
+annotation = "1.10.0"
+appcompat = "1.7.1"
+coreKtx = "1.16.0"
 
 junit = "4.13.2"
-truth = "1.4.4"
-roboeletric = "4.14.1"
-espressoCore = "3.6.1"
-testRunner = "1.6.2"
+truth = "1.4.5"
+roboeletric = "4.16.1"
+espressoCore = "3.7.0"
+testRunner = "1.7.0"
 
 [libraries]
+androidx-annotation = { module = "androidx.annotation:annotation", version.ref = "annotation" }
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
 androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
-androidx-multidex = { module = "androidx.multidex:multidex", version.ref = "multidex" }
 
 androidx-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "espressoCore" }
 androidx-test-runner = { module = "androidx.test:runner", version.ref = "testRunner" }
 
 google-truth = { module = "com.google.truth:truth", version.ref = "truth" }
 junit = { module = "junit:junit", version.ref = "junit" }
+kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 roboeletric = { module = "org.robolectric:robolectric", version.ref = "roboeletric" }
 
 [plugins]
