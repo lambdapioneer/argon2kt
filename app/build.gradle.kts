@@ -1,5 +1,7 @@
 fun getSdkVersion(version: Provider<String>) = version.get().toInt()
 
+fun getVersion(version: Provider<String>) = version.get()
+
 plugins {
     id("com.android.application")
 }
@@ -7,6 +9,7 @@ plugins {
 android {
     namespace = "com.lambdapioneer.argon2kt.app"
     compileSdk = getSdkVersion(libs.versions.compileSdk)
+    ndkVersion = getVersion(libs.versions.ndk)
 
     defaultConfig {
         applicationId = "com.lambdapioneer.argon2kt.app"
