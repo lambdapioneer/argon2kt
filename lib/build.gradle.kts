@@ -15,6 +15,7 @@ plugins {
 android {
     namespace = "com.lambdapioneer.argon2kt"
     compileSdk = getSdkVersion(libs.versions.compileSdk)
+    ndkVersion = getVersion(libs.versions.ndk)
 
     defaultConfig {
         minSdk = getSdkVersion(libs.versions.minSdk)
@@ -28,8 +29,6 @@ android {
         multiDexEnabled = true
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-
-        ndkVersion = getVersion(libs.versions.ndk)
 
         ndk {
             abiFilters.addAll(listOf("x86", "armeabi-v7a", "x86_64", "arm64-v8a"))
