@@ -1,7 +1,7 @@
 [versions]
 minSdk = "21"
-targetSdk = "35"
-compileSdk = "35"
+targetSdk = "37"
+compileSdk = "37"
 ndk = "27.2.12479018"
 
 agp = "9.4.0"
