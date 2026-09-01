@@ -1,7 +1,5 @@
 @file:Suppress("UnstableApiUsage")
 
-import org.jetbrains.kotlin.gradle.dsl.JvmTarget
-
 fun getSdkVersion(version: Provider<String>) = version.get().toInt()
 
 fun getVersion(version: Provider<String>) = version.get()
@@ -10,7 +8,6 @@ fun getProperty(name: String) = project.extra[name] as String
 
 plugins {
     id("com.android.library")
-    id("kotlin-android")
     id("maven-publish")
     id("signing")
 }
@@ -44,8 +41,6 @@ android {
                 targets("argon2jni")
             }
         }
-
-        setProperty("archivesBaseName", "argon2kt")
     }
 
     buildTypes {
@@ -69,18 +64,16 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 
-    kotlin {
-        compilerOptions {
-            jvmTarget.set(JvmTarget.JVM_17)
-        }
-    }
-
     publishing {
         singleVariant("release") {
             withSourcesJar()
             withJavadocJar()
         }
     }
+}
+
+base {
+    archivesName = "argon2kt"
 }
 
 publishing {

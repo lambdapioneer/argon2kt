@@ -4,8 +4,7 @@ targetSdk = "35"
 compileSdk = "35"
 ndk = "27.2.12479018"
 
-agp = "8.8.1"
-kotlin = "2.0.21"
+agp = "9.4.0"
 appcompat = "1.7.0"
 coreKtx = "1.15.0"
 multidex = "2.0.1"
@@ -30,4 +29,3 @@ roboeletric = { module = "org.robolectric:robolectric", version.ref = "roboeletr
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
-jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
