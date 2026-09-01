@@ -1,10 +1,7 @@
-import org.jetbrains.kotlin.gradle.dsl.JvmTarget
-
 fun getSdkVersion(version: Provider<String>) = version.get().toInt()
 
 plugins {
     id("com.android.application")
-    id("kotlin-android")
 }
 
 android {
@@ -56,11 +53,6 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 
-    kotlin {
-        compilerOptions {
-            jvmTarget.set(JvmTarget.JVM_17)
-        }
-    }
 }
 
 dependencies {
