@@ -24,13 +24,13 @@ RUN curl -fsSL -o /tmp/cmdline-tools.zip \
  && mv "${ANDROID_HOME}/cmdline-tools/cmdline-tools" "${ANDROID_HOME}/cmdline-tools/latest" \
  && rm /tmp/cmdline-tools.zip
 
-# SDK components: compileSdk and ndk from gradle/libs.versions.toml,
-# build-tools and cmake as required by the AGP version in use.
+# SDK components: compileSdk from gradle/libs.versions.toml, build-tools and
+# cmake as required by the AGP version in use. The NDK (2 GB) is installed by
+# build.sh instead: a layer that large fails to commit on a medium enclave.
 RUN yes | sdkmanager --licenses >/dev/null \
  && sdkmanager --install \
       "platforms;android-37.0" \
       "build-tools;36.0.0" \
-      "ndk;27.3.13750724" \
       "cmake;3.22.1" \
       "platform-tools"
 
