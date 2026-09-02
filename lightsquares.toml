@@ -1,0 +1,16 @@
+# Light Squares Attestable Builds: https://lightsquares.dev/products/attestable-builds
+# Test locally before submitting:
+#   podman build -t ab-builder -f Dockerfile docker/
+#   podman run --rm -v "$PWD:/workspace" -w /workspace ab-builder ./build.sh
+
+[source]
+head = "main"
+shallow = true
+
+[build]
+path = "docker/Dockerfile"
+build_cmd = "./build.sh"
+artifacts = [
+  "lib/build/outputs/aar/argon2kt-release.aar",
+  "app/build/outputs/apk/release/app-release.apk",
+]

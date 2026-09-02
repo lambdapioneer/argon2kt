@@ -1,6 +1,7 @@
 # Argon2Kt: An Android/Kotlin binding for the Argon2 hash
 
 [![Android](https://github.com/lambdapioneer/argon2kt/actions/workflows/android.yaml/badge.svg?branch=main)](https://github.com/lambdapioneer/argon2kt/actions/workflows/android.yaml)
+[![Light Squares Attestable Builds](https://app.lightsquares.dev/api/badge/lambdapioneer/argon2kt.svg)](https://app.lightsquares.dev/builds/dashboard?show=lambdapioneer/argon2kt)
 
 Argon2Kt is a binding for the [Argon2 password hash](https://github.com/P-H-C/phc-winner-argon2) that allows to do memory-hard password hashing
 easily and securely on Android.
@@ -63,6 +64,13 @@ Of course. Checkout the [`SampleJavaClass.java`](https://github.com/lambdapionee
 **I have problems with an UnsatisfiedLinkError in production. What can I do?**
 
 By default Argon2Kt uses the system's loader for .so files. However, for some models and configurations it is known to fail. You can use an alternative SoLoader such as [ReLinker](https://github.com/KeepSafe/ReLinker) using the callback provided by the `Argon2Kt` constructor.
+
+
+## Attestable builds 🔏
+
+The release AAR and the sample app APK are also built with [Light Squares Attestable Builds](https://lightsquares.dev/products/attestable-builds).
+The unmodified Gradle build runs inside a hardware-isolated AMD SEV-SNP enclave, and the resulting binaries receive a signed, publicly logged provenance statement tying them to the exact source commit.
+The build definition lives in `lightsquares.toml`, `build.sh`, and `docker/Dockerfile`; anyone can check an artifact at <https://app.lightsquares.dev/verify>.
 
 
 ## Contribute 👋
