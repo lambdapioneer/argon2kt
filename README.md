@@ -1,6 +1,7 @@
 # Argon2Kt: An Android/Kotlin binding for the Argon2 hash
 
 [![Android](https://github.com/lambdapioneer/argon2kt/actions/workflows/android.yaml/badge.svg?branch=main)](https://github.com/lambdapioneer/argon2kt/actions/workflows/android.yaml)
+
 [![Light Squares Attestable Builds](https://app.lightsquares.dev/api/badge/lambdapioneer/argon2kt.svg)](https://app.lightsquares.dev/builds/dashboard?show=lambdapioneer/argon2kt)
 
 Argon2Kt is a binding for the [Argon2 password hash](https://github.com/P-H-C/phc-winner-argon2) that allows to do memory-hard password hashing
