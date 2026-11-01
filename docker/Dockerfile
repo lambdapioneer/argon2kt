@@ -3,7 +3,7 @@
 # and this directory (docker/) is the build context, so never COPY sources.
 
 # eclipse-temurin:21-jdk (Ubuntu), pinned by digest
-FROM eclipse-temurin:21-jdk@sha256:85f00967bcc624fc19fa9c2cf124ea426a5363898e267141726f31f358c2e14b
+FROM eclipse-temurin:21-jdk@sha256:ebfbb18d11ff163ee83b21258acf12248af48d22a0fdfdc68fa1a1516c05976a
 
 ENV ANDROID_HOME=/opt/android-sdk
 ENV PATH="${ANDROID_HOME}/cmdline-tools/latest/bin:${PATH}"
